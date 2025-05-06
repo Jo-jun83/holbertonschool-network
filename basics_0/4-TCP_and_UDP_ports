@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-# script that displays listening ports
-netstat -tunlp | grep LISTEN
+# Script qui affiche les ports TCP/UDP en écoute et les sockets UNIX en écoute
+
+sudo netstat -tunlp | grep LISTEN
+sudo netstat -lxnp --unix
