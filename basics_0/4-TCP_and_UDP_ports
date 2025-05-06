@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
-# script that displays listening ports
-ss -tulnp
+# Script that displays listening TCP/UDP ports and UNIX domain sockets
+
+echo "Active Internet connections (only servers)"
+sudo ss -tulnp | grep -E 'LISTEN|udp'
+
+echo
+echo "Active UNIX domain sockets (only servers)"
+sudo ss -lxnp
